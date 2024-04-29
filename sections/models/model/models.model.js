@@ -89,6 +89,10 @@ Models.init(
       allowNull: true,
       comment: "Model Measurement",
     },
+    isExclusive:{
+      type: DataTypes.BOOLEAN,
+      defaultValue:false,
+    }
   },
   {
     sequelize: sequelize,
