@@ -9,7 +9,6 @@ class BaseRepository{
     async create(data , transaction=null){
        try {
           const createResponse =await this.model.create(data , {transaction});
-
           return createResponse.toJSON();
        } catch (error) {
          console.log(error);
@@ -55,6 +54,16 @@ class BaseRepository{
         console.error('Error updating record by ID:', error.message);
         throw error;
      }
+    }
+
+    async findOne({where={}}){
+        try {
+          const findOneData = await this.model.findOne({where});
+          if(!findOneData) return false
+          return findOneData.toJSON();
+        } catch (error) {
+         throw error;
+        }
     }
 
 }

@@ -7,6 +7,8 @@ const { PORT } = require('./config/enviroments/constant');
 
 // Routes
 const modelsRoute = require('./sections/models/models.route');
+const categoryRoute = require('./sections/category/category.route');
+const modelCategoryRoute = require('./sections/models-category/model-category.route');
 
 dotenv.config();
 const app = express();
@@ -27,7 +29,10 @@ app.use(bodyParser.urlencoded({ extended: true
 
 
 
-app.use('/api/v1/models',modelsRoute)
+app.use('/api/v1/models',modelsRoute);
+app.use('/api/v1/category' ,categoryRoute );
+app.use('/api/v1/model-category' , modelCategoryRoute);
+
 
 app.listen(PORT , ()=>{
     console.log(`Server is running on port ${PORT}`);
