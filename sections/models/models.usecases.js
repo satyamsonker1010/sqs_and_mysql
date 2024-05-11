@@ -10,12 +10,11 @@ const modelCreateUseCase = async(modelsInstance , {...restData})=>{
 
      // Send request to sqs
 
-     const createEntry = await  modelsInstance.create(restData);
+     const createEntry = await  modelsInstance.create(bodyData);
      const model_id = createEntry?.id;
      // Logic for insert message in the queue
-     const insertMessageInQueue =  await modelsImagesQueue.add({name:restData?.model_name,model_id});
-     return {createEntry , insertMessageInQueue};
-  } catch (error) {
+     return createEntry
+   } catch (error) {
      throw error;
   }
 }

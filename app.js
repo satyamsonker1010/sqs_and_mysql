@@ -14,7 +14,7 @@ const app = express();
 
 // Define the all cors urls
 
-const corsUrls = ["*"];
+const corsUrls = ["*", "http://localhost:7890"];
 
 app.use(
   cors({
