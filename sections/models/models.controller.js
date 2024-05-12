@@ -11,7 +11,7 @@ const modelsCreateController = async(req,res)=>{
       model_height:height || 0,
       model_weight:weight || 0,
       model_nationality:birthPlace || "",
-      model_date_of_birth:birthday || "",
+      model_date_of_birth:birthday || "1970-01-01",
       model_rank:rank || -1,
       model_likes:stats?.likes || 0,
       model_views:stats?.views || 0,

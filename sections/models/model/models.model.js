@@ -44,7 +44,8 @@ Models.init(
       comment: "Model Nationality",
     },
     model_date_of_birth: {
-      type: DataTypes.DATEONLY,
+      type: DataTypes.DATE,
+      defaultValue:"1970-01-01",
       allowNull: true,
       comment: "Model Date of Birth",
     },
